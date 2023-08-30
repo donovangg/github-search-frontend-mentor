@@ -2,7 +2,27 @@
 
 import React from "react";
 
-const UserCard = () => {
+type UserCardProps = {
+  user: {
+    name: string;
+    login: string;
+    location: string;
+    followers: number;
+    followers_url: string;
+    following: number;
+    following_url: string;
+    public_repos: number;
+    twitter_username: string;
+    company: string;
+    blog: string;
+    html_url: string;
+  };
+};
+
+const UserCard = ({ user }: UserCardProps) => {
+  if (!user || Object.keys(user).length === 0) {
+    return <div>Loading...</div>; // or some other loading indicator
+  }
   return (
     <div className="w-80 border-2 border-green-500 flex flex-col gap-4">
       <div className="w-60 border-2 border-purple-400 flex gap-2 p-1 mx-auto">
@@ -14,9 +34,11 @@ const UserCard = () => {
           />
         </div>
         <div>
-          <h3>The Octocat</h3>
-          <a href="">@octocat</a>
-          <p>Joined 25 Jan 2011</p>
+          <h3>{user.name}</h3>
+          <a href={user.html_url} target="_blank">
+            @{user.login}
+          </a>
+          {/* <p>Joined {user.created_at}</p> */}
         </div>
       </div>
       <div className="w-60 border-red-500 mx-auto border-2">

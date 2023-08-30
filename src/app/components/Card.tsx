@@ -3,9 +3,10 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import GithubForm from "./GithubForm";
 import UserCard from "./UserCard";
+import UserData from "../UserData";
 
 const Card = () => {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState<UserData | null>(null);
   const [loading, setLoading] = useState(false);
 
   const searchUser = async (query: any) => {
@@ -18,11 +19,16 @@ const Card = () => {
       console.log(err);
     }
   };
+
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
+
   return (
     <div>
       <Navbar />
       <GithubForm user={user} setUser={setUser} searchUser={searchUser} />
-      <UserCard />
+      <UserCard user={user} />
     </div>
   );
 };

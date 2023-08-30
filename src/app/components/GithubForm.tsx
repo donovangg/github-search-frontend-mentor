@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import UserData from "../UserData";
 
 type FormProps = {
-  user: string;
-  setUser: React.Dispatch<React.SetStateAction<string>>;
-  searchUser: (query: any) => Promise<void>;
+  user: UserData | null; // Use UserData type here
+  setUser: React.Dispatch<React.SetStateAction<UserData | null>>; // Use the same type
+  searchUser: (query: string) => Promise<void>; // Specify query as string
 };
 
 const GithubForm = ({ user, setUser, searchUser }: FormProps) => {
