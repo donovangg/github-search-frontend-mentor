@@ -7,9 +7,11 @@ interface UserData {
   following_url: string;
   public_repos: number;
   twitter_username: string;
-  company: string;
+  company: string | null;
   blog: string;
-  // Add any other properties as needed
+  name: string;
+  html_url: string;
+  bio: null | string;
 }
 
 export default UserData;
