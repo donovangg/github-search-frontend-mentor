@@ -17,7 +17,7 @@ const UserCard = ({ user }: UserCardProps) => {
         <div>
           <img
             className="w-16 h-16 rounded-full"
-            src="https://avatars.githubusercontent.com/u/29687217?v=4"
+            src={user.avatar_url}
             alt="avatar"
           />
         </div>
@@ -30,61 +30,84 @@ const UserCard = ({ user }: UserCardProps) => {
         </div>
       </div>
       <div className="w-60 border-red-500 mx-auto border-2">
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-          Quisque volutpat mattis eros.
-        </p>
+        {user.bio ? <p>{user.bio}</p> : ""}
       </div>
       <div className="w-60 border-purple-500 border-2 mx-auto">
         <div className="flex gap-2 justify-center border-2 border-slate-600">
           <div className="border-2 border-pink-400 text-center">
             <h3>Repos</h3>
-            <p>8</p>
+            <p>{user.public_repos}</p>
           </div>
           <div className="border-2 border-pink-400 text-center">
             <h3>Followers</h3>
-            <p>3938</p>
+            <p>
+              <a href={user.followers_url} target="_blank">
+                {user.followers}
+              </a>
+            </p>
           </div>
           <div className="border-2 border-pink-400 text-center">
             <h3>Following</h3>
-            <p>9</p>
+            <p>
+              <a href={user.following_url} target="_blank">
+                {user.following}
+              </a>
+            </p>
           </div>
         </div>
       </div>
       <div className="border-2 border-red-700 w-60 mx-auto">
         <ul className="flex flex-col gap-2">
-          <li className="flex gap-2">
-            <img
-              className="w-3.5 h-5"
-              src="/assets/icon-location.svg"
-              alt="location"
-            />
-            <a href="#">Sunlight Tea Studio</a>
-          </li>
-          <li className="flex gap-2">
-            <img
-              className="w-5 h-5"
-              src="/assets/icon-website.svg"
-              alt="website"
-            />
-            <a href="#">hireme.net</a>
-          </li>
-          <li className="flex gap-2">
-            <img
-              className="w-5 h-5"
-              src="/assets/icon-twitter.svg"
-              alt="twitter"
-            />
-            <a href="#">@hireme</a>
-          </li>
-          <li className="flex gap-2">
-            <img
-              className="w-5 h-5"
-              src="/assets/icon-company.svg"
-              alt="company"
-            />
-            <a href="#">Your Company</a>
-          </li>
+          {user.location ? (
+            <li className="flex gap-2">
+              <img
+                className="w-3.5 h-5"
+                src="/assets/icon-location.svg"
+                alt="location"
+              />
+              <p>{user.location}</p>
+            </li>
+          ) : (
+            ""
+          )}
+          {user.blog ? (
+            <li className="flex gap-2">
+              <img
+                className="w-5 h-5"
+                src="/assets/icon-website.svg"
+                alt="website"
+              />
+              <a href="#">{user.blog}</a>
+            </li>
+          ) : (
+            ""
+          )}
+          {user.twitter_username ? (
+            <li className="flex gap-2">
+              <img
+                className="w-5 h-5"
+                src="/assets/icon-twitter.svg"
+                alt="twitter"
+              />
+              <a href="https://twitter.com/" target="_blank">
+                @{user.twitter_username}
+              </a>
+            </li>
+          ) : (
+            ""
+          )}
+          {user.company ? (
+            <li className="flex gap-2">
+              <img
+                className="w-5 h-5"
+                src="/assets/icon-company.svg"
+                alt="company"
+              />
+              <a href="#">{user.company}</a>
+            </li>
+          ) : (
+            ""
+          )}
         </ul>
       </div>
     </div>
