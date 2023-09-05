@@ -11,6 +11,10 @@ const UserCard = ({ user }: UserCardProps) => {
   if (!user || Object.keys(user).length === 0) {
     return <div>Loading...</div>; // or some other loading indicator
   }
+
+  if (user.message == "Not Found") {
+    return <div>Not Found</div>;
+  }
   return (
     <div className="w-80 border-2 border-green-500 flex flex-col gap-4">
       <div className="w-60 border-2 border-purple-400 flex gap-2 p-1 mx-auto">

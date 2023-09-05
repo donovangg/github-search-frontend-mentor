@@ -14,6 +14,7 @@ interface UserData {
   bio: null | string;
   created_at: string;
   avatar_url: string;
+  message: string;
 }
 
 export default UserData;
