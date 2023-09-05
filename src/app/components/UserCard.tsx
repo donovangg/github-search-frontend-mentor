@@ -2,6 +2,7 @@
 
 import React from "react";
 import UserData from "../UserData";
+import { DateTime } from "luxon";
 
 type UserCardProps = {
   user: UserData | null;
@@ -15,12 +16,17 @@ const UserCard = ({ user }: UserCardProps) => {
   if (user.message == "Not Found") {
     return <div>Not Found</div>;
   }
+
+  const githubCreatedAt = user.created_at;
+  const githubDateTime = DateTime.fromISO(githubCreatedAt);
+  const formattedDate = githubDateTime.toFormat("dd LLLL yyyy");
+  console.log(formattedDate);
   return (
     <div className="w-80 border-2 border-green-500 flex flex-col gap-4">
-      <div className="w-60 border-2 border-purple-400 flex gap-2 p-1 mx-auto">
+      <div className="w-64 border-2 border-purple-400 flex gap-2 p-1 mx-auto">
         <div>
           <img
-            className="w-16 h-16 rounded-full"
+            className="w-16 h-16 rounded-full "
             src={user.avatar_url}
             alt="avatar"
           />
@@ -30,7 +36,7 @@ const UserCard = ({ user }: UserCardProps) => {
           <a href={user.html_url} target="_blank">
             @{user.login}
           </a>
-          {/* <p>Joined {user.created_at}</p> */}
+          <p>Joined {formattedDate}</p>
         </div>
       </div>
       <div className="w-60 border-red-500 mx-auto border-2">
