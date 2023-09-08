@@ -2,7 +2,7 @@ import React from "react";
 
 const DefaultCard = () => {
   return (
-    <div className="w-96 border-2 border-green-500 flex flex-col gap-4">
+    <div className="w-96 border-2 bg-white border-green-500 flex flex-col gap-4">
       <div className="w-64 border-2 border-purple-400 flex gap-2 p-1 mx-auto">
         <div>
           <img
@@ -22,13 +22,13 @@ const DefaultCard = () => {
       <div className="w-60 border-red-500 mx-auto border-2">
         How people build software.
       </div>
-      <div className="w-60 border-purple-500 border-2 mx-auto">
-        <div className="flex gap-2 justify-center border-2 border-slate-600">
-          <div className="border-2 border-pink-400 text-center">
+      <div className="w-60 bg-light-gray border-purple-500 border-2 mx-auto">
+        <div className="flex gap-2 justify-center border-2 light-gray border-slate-600">
+          <div className=" text-center">
             <h3>Repos</h3>
             <p>8</p>
           </div>
-          <div className="border-2 border-pink-400 text-center">
+          <div className=" text-center">
             <h3>Followers</h3>
             <p>
               <a
@@ -39,7 +39,7 @@ const DefaultCard = () => {
               </a>
             </p>
           </div>
-          <div className="border-2 border-pink-400 text-center">
+          <div className=" text-center">
             <h3>Following</h3>
             <p>
               <a href="#" target="_blank">
