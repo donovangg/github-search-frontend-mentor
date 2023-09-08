@@ -3,6 +3,7 @@
 import React from "react";
 import UserData from "../UserData";
 import { DateTime } from "luxon";
+import DefaultCard from "./DefaultCard";
 
 type UserCardProps = {
   user: UserData | null;
@@ -10,7 +11,7 @@ type UserCardProps = {
 
 const UserCard = ({ user }: UserCardProps) => {
   if (!user || Object.keys(user).length === 0) {
-    return <div>Loading...</div>; // or some other loading indicator
+    return <DefaultCard />; // or some other loading indicator
   }
 
   if (user.message == "Not Found") {
