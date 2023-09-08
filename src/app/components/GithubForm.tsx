@@ -19,7 +19,7 @@ const GithubForm = ({ user, setUser, searchUser }: FormProps) => {
   };
 
   return (
-    <div className="w-80 border-2 border-pink-500">
+    <div className="w-96 border-2 border-pink-500">
       <form className="w-full border-2 border-orange-400">
         <div className="flex">
           <span>

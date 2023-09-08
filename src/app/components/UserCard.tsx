@@ -23,8 +23,8 @@ const UserCard = ({ user }: UserCardProps) => {
   const formattedDate = githubDateTime.toFormat("dd LLLL yyyy");
   console.log(formattedDate);
   return (
-    <div className="w-80 border-2 border-green-500 flex flex-col gap-4">
-      <div className="w-64 border-2 border-purple-400 flex gap-2 p-1 mx-auto">
+    <div className="w-96 border-2 border-green-500 flex flex-col gap-4">
+      <div className="w-72 border-2 border-purple-400 flex gap-2 p-1 mx-auto">
         <div>
           <img
             className="w-16 h-16 rounded-full "
@@ -40,10 +40,10 @@ const UserCard = ({ user }: UserCardProps) => {
           <p>Joined {formattedDate}</p>
         </div>
       </div>
-      <div className="w-60 border-red-500 mx-auto border-2">
+      <div className="w-72 border-red-500 mx-auto border-2">
         {user.bio ? <p>{user.bio}</p> : ""}
       </div>
-      <div className="w-60 border-purple-500 border-2 mx-auto">
+      <div className="w-72 border-purple-500 border-2 mx-auto">
         <div className="flex gap-2 justify-center border-2 border-slate-600">
           <div className="border-2 border-pink-400 text-center">
             <h3>Repos</h3>
@@ -67,7 +67,7 @@ const UserCard = ({ user }: UserCardProps) => {
           </div>
         </div>
       </div>
-      <div className="border-2 border-red-700 w-60 mx-auto">
+      <div className="border-2 border-red-700 w-72 mx-auto">
         <ul className="flex flex-col gap-2">
           {user.location ? (
             <li className="flex gap-2">

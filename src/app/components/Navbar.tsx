@@ -4,7 +4,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="w-80 border-2 border-purple-400">
+    <div className="w-96 border-2 border-purple-400">
       <nav>
         <div>
           <span>devfinder</span>

@@ -2,7 +2,7 @@ import React from "react";
 
 const DefaultCard = () => {
   return (
-    <div className="w-80 border-2 border-green-500 flex flex-col gap-4">
+    <div className="w-96 border-2 border-green-500 flex flex-col gap-4">
       <div className="w-64 border-2 border-purple-400 flex gap-2 p-1 mx-auto">
         <div>
           <img
